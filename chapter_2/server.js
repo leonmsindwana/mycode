@@ -11,9 +11,10 @@ app.use(express.json());
 app.post("/calculate", (req, res) => {
     const height = parseFloat(req.body.height);
     const weight = parseFloat(req.body.weight);
+    const hello = request.body.Name;
     const bmi = weight/(height * height);
     res.send(`
-        <p>Height of ${height}m and Weight of ${weight}kg gives a BMI of ${bmi.toFixed(2)}kg/m²</p>
+        <h1>${hello}:</h1><p>Height of ${height}m and Weight of ${weight}kg gives a BMI of ${bmi.toFixed(2)}kg/m²</p>
     `);
 });
 
